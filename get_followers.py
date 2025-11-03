@@ -75,7 +75,7 @@ PROXY = None  # Example: "http://myuser:mypass@proxy.example.com:8080"
 # =============================================================================
 
 
-async def get_followers(username, limit=100, use_timestamp=False, use_proxy=False):
+async def get_followers(username, limit=0, use_timestamp=False, use_proxy=False):
     """
     Get followers from a target Twitter profile
 
@@ -203,7 +203,7 @@ async def get_followers(username, limit=100, use_timestamp=False, use_proxy=Fals
 
 
 async def get_followers_multiple(
-    usernames, limit=100, use_timestamp=False, use_proxy=False
+    usernames, limit=0, use_timestamp=False, use_proxy=False
 ):
     """
     Get followers from multiple target profiles
@@ -286,7 +286,7 @@ Examples:
         "-l",
         "--limit",
         type=int,
-        default=100,
+        default=0,
         help="Number of followers to fetch per user (default: 100, use 0 for unlimited)",
     )
 
