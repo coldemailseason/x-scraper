@@ -112,7 +112,7 @@ async def get_followers(username, limit=0, use_timestamp=False, use_proxy=False)
         print(f"  Tweets: {user.statusesCount:,}\n")
 
         # Get followers (None = unlimited)
-        fetch_limit = None if limit <= 0 else limit
+        fetch_limit = 0 if limit <= 0 else limit
         print("Fetching followers...\n")
 
         followers = await gather(api.followers(user.id, limit=fetch_limit))
