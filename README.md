@@ -1,8 +1,8 @@
-# X Followers Scraper
+## X Followers Scraper
 
 A Python tool for scraping X followers using the twscrape library. This repository contains two main scripts: `get_followers.py` for scraping follower data and `add_account.py` for managing X accounts.
 
-## Features
+#### Features
 
 - **Follower Scraping**: Extract detailed follower information from X profiles
 - **Multiple Output Formats**: Save data as JSON (structured) and CSV (spreadsheet-friendly)
@@ -11,7 +11,7 @@ A Python tool for scraping X followers using the twscrape library. This reposito
 - **Proxy Support**: Optional proxy configuration for enhanced privacy
 - **Account Management**: Add and manage X accounts with cookie authentication
 
-## Installation
+#### Installation
 
 1. **Clone the repository**:
 
@@ -42,9 +42,9 @@ A Python tool for scraping X followers using the twscrape library. This reposito
    - Python 3.12+
    - twscrape >= 0.17.0
 
-## Setup
+#### Setup
 
-### 1. Add X Accounts
+###### 1. Add X Accounts
 
 Before scraping, you need to add X accounts to the twscrape pool:
 
@@ -58,7 +58,7 @@ This will read from `accounts.txt` with the format:
 username:auth_token:ct0
 ```
 
-#### How to Get Cookies
+######## How to Get Cookies
 
 1. Purchase X accounts credentials with an auth_token included
 2. Open a browser
@@ -72,7 +72,7 @@ username:auth_token:ct0
 10. Repeat for all credentials
 11. Run the add_account.py script.
 
-### 2. Configure Proxy (Optional)
+###### 2. Configure Proxy (Optional)
 
 Edit the `PROXY` variable in `get_followers.py`:
 
@@ -80,9 +80,9 @@ Edit the `PROXY` variable in `get_followers.py`:
 PROXY = "http://user:pass@domain:port"
 ```
 
-## Usage
+#### Usage
 
-### Basic Usage
+###### Basic Usage
 
 Get all followers from a single account:
 
@@ -90,29 +90,29 @@ Get all followers from a single account:
 python get_followers.py elonmusk
 ```
 
-### Advanced Options
+###### Advanced Options
 
 ```bash
-# Get specific number of followers
+## Get specific number of followers
 python get_followers.py elonmusk --limit 500
 
-# Add timestamp to prevent overwriting files
+## Add timestamp to prevent overwriting files
 python get_followers.py elonmusk --timestamp
 
-# Multiple accounts
+## Multiple accounts
 python get_followers.py elonmusk BillGates BarackObama --limit 1000 --timestamp
 
-# Use proxy
+## Use proxy
 python get_followers.py elonmusk --proxy
 ```
 
-### Command Line Flags
+###### Command Line Flags
 
 - `--limit, -l`: Number of followers to fetch (default: 100, use 0 for unlimited)
 - `--timestamp, -t`: Add timestamp to output filenames
 - `--proxy, -p`: Use configured proxy
 
-## Output Files
+#### Output Files
 
 For each target user:
 
@@ -123,7 +123,7 @@ For multiple targets:
 
 - `followers_summary.csv` - Statistics for all processed accounts
 
-## Important Notes
+#### Important Notes
 
 ⚠️ **Legal Disclaimer**:
 
@@ -133,14 +133,14 @@ For multiple targets:
 - Rate limits apply - large accounts may take significant time
 - X may suspend accounts that violate their policies
 
-## Troubleshooting
+#### Troubleshooting
 
 - **Account not active**: Ensure you have both `auth_token` and `ct0` cookies
 - **Rate limits**: twscrape handles this automatically, but large requests may take time
 - **Cookie expiration**: Refresh cookies periodically
 - **Proxy issues**: Verify proxy format and credentials
 
-## Dependencies
+#### Dependencies
 
 - twscrape: Twitter scraping library
 - asyncio: Asynchronous operations
