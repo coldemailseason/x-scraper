@@ -58,7 +58,7 @@ This will read from `accounts.txt` with the format:
 username:auth_token:ct0
 ```
 
-######## How to Get Cookies
+### How to Get Cookies
 
 1. Purchase X accounts credentials with an auth_token included
 2. Open a browser
